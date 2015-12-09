@@ -29,24 +29,24 @@ public class Dice
 									System.out.println("Your balance is " + credits + " credits.");
 								}
 								position = (position + roll)%40;
-								System.out.println("You rolled " + roll + ". You landed on " + Board.starWarsBoard.get(position).getName());
+								System.out.println("You rolled " + roll + ". You landed on " + Board.playBoard.get(position).getName());
 								System.out.println();
-								if(Board.starWarsBoard.get(position).isBuyable() == true)
+								if(Board.playBoard.get(position).isBuyable() == true)
 									{
-										if(Board.starWarsBoard.get(position).isPurchased() == false) 
+										if(Board.playBoard.get(position).isPurchased() == false) 
 											{
-												System.out.println("Buy " + Board.starWarsBoard.get(position).getName() + " for $" + Board.starWarsBoard.get(position).getPrice());
+												System.out.println("Buy " + Board.playBoard.get(position).getName() + " for $" + Board.playBoard.get(position).getPrice());
 												System.out.println("Press 1 to buy, 2 to pass");
 												if(Player.nextInt() == 1) 
 													{
-														if(credits >= Board.starWarsBoard.get(position).getPrice())
+														if(credits >= Board.playBoard.get(position).getPrice())
 															{
-																Board.starWarsBoard.get(position).setPurchased(true);
-																credits -= Board.starWarsBoard.get(position).getPrice();
-																System.out.println("You bought " + Board.starWarsBoard.get(position).getName() + ".");
+																Board.playBoard.get(position).setPurchased(true);
+																credits -= Board.playBoard.get(position).getPrice();
+																System.out.println("You bought " + Board.playBoard.get(position).getName() + ".");
 																System.out.println("Your balance is " + credits+" credits.");
 																System.out.println();
-																ownedProperties.add(new String(Board.starWarsBoard.get(position).getName()));
+																ownedProperties.add(new String(Board.playBoard.get(position).getName()));
 																System.out.print("Your Properties:");
 																for(String property: ownedProperties) 
 																	{

@@ -4,7 +4,15 @@ public class GameRunner
 	{
 	public static void main(String[] args)
 		{
-			Board.buildStarWarsBoard();
+			Introduction.intro();
+			if (Introduction.getChoice()==1)
+			{
+				Board.buildStarWarsBoard();
+			}
+			else
+			{
+				Board.buildBoard();
+			}
 			Dice.rollDice();
 		}
 	}
